@@ -1,4 +1,46 @@
+/* Basic Styles */
 body {
-  margin: 0px;
-  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Text Styling */
+.text-style {
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #333;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Vibrant Colors */
+a-text[color="orange"] { color: #FFA500; }
+a-text[color="purple"] { color: #8A2BE2; }
+a-text[color="darkblue"] { color: #00008B; }
+a-text[color="darkgreen"] { color: #006400; }
+a-text[color="darkred"] { color: #8B0000; }
+
+/* Icon Animations */
+.icon {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.6);
+}
+
+/* Glow Effect for Clickable Text */
+.clickable:hover ~ .text-style {
+  color: #FFD700; /* Gold for hover */
+}
+
+/* Animations for Appearing Text */
+#info > a-text {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
