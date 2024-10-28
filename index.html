@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>AR Business Card - A-Frame & AR.js</title>
+  <title>Gesture Interactions - A-Frame & AR.js</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="stylesheet" href="styles.css">
@@ -15,59 +15,20 @@
 <body>
   <a-scene arjs embedded renderer="logarithmicDepthBuffer: true;" vr-mode-ui="enabled: false" gesture-detector id="scene">
     <a-assets>
-      <!-- Profile Image and Icons -->
-      <img id="profile-image" src="./assets/selva.jpg">
-      <img id="email-icon" src="./assets/email.png">
-      <img id="phone-icon" src="./assets/phone.png">
-      <img id="website-icon" src="./assets/planet.png">
-      <img id="social-icon1" src="./assets/linkedin.png">
-      <img id="social-icon2" src="./assets/instagram.png">
-      <img id="social-icon3" src="./assets/facebook.png">
+      <a-asset-item id="bowser" src='./assets/KRISHNA.glb'></a-asset-item>
+      
     </a-assets>
 
     <a-marker preset="hiro" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;" id="markerA">
       
-      <!-- Left Side Information (Increased Scale) -->
-      <a-entity position="-0.5 0.2 0" scale="1 1 1">
-        <!-- Name -->
-        <a-text value="SELVENDRAN S" color="black" width="4" align="left" font="https://cdn.aframe.io/fonts/Exo2Bold.fnt"></a-text>
-        
-        <!-- Profession -->
-        <a-text value="VR AR - TECHNICAL" color="gray" width="3.6" position="0 -0.4 0" align="left"></a-text>
-        
-        <!-- Email with Icon (Clickable) -->
-        <a-image src="#email-icon" width="0.2" height="0.2" position="0 -1 0" class="clickable" 
-                 link="href: mailto:selvendran.s@infrazanalytics.com"></a-image>
-        <a-text value="selvendran.s@infrazanalytics.com" color="black" width="3.6" position="0.3 -1 0" align="left"></a-text>
-        
-        <!-- Phone with Icon -->
-        <a-image src="#phone-icon" width="0.2" height="0.2" position="0 -1.4 0"></a-image>
-        <a-text value="+91 9150079783" color="black" width="3.6" position="0.3 -1.4 0" align="left"></a-text>
-        
-        <!-- Website with Icon (Clickable) -->
-        <a-image src="#website-icon" width="0.2" height="0.2" position="0 -1.8 0" class="clickable" 
-                 link="href: https://www.infrazanalytics.com"></a-image>
-        <a-text value="www.infrazanalytics.com" color="black" width="3.6" position="0.3 -1.8 0" align="left"></a-text>
+      <a-entity
+        id="bowser-model" gltf-model="#bowser" position="0 0 0" scale="0.05 0.05 0.05" class="clickable" gesture-handler>
       </a-entity>
-      
-      <!-- Right Side Profile Image (Increased Scale) -->
-      <a-entity position="0.8 0.1 0" scale="1 1 1">
-        <a-image src="#profile-image" width="1.2" height="1.2" position="0 0 0"></a-image>
-      </a-entity>
-      
-      <!-- Social Media Icons with Links (Bottom Side, Increased Scale) -->
-      <a-entity position="0 -1.6 0" scale="0.6 0.6 0.6">
-        <!-- LinkedIn (Clickable) -->
-        <a-image src="#social-icon1" width="0.4" height="0.4" position="-1 0 0" class="clickable" 
-                 link="href: https://www.linkedin.com/in/selvendrans"></a-image>
-        <!-- Instagram (Clickable) -->
-        <a-image src="#social-icon2" width="0.4" height="0.4" position="0 0 0" class="clickable" 
-                 link="href: https://www.instagram.com/selvendrans"></a-image>
-        <!-- Facebook (Clickable) -->
-        <a-image src="#social-icon3" width="0.4" height="0.4" position="1 0 0" class="clickable" 
-                 link="href: https://www.facebook.com/selvendrans"></a-image>
-      </a-entity>
+  
+     
 
+
+      
     </a-marker>
 
     <a-entity camera></a-entity>
